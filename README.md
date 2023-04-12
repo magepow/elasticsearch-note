@@ -5,6 +5,15 @@
 ### Docs
 * [Elasticsearch Install](https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html)
 
+Commands:
+```
+sudo systemctl restart elasticsearch.service
+
+curl -X GET 'http://localhost:9200'
+
+```
+
+
 ### Awesome Tutorial:
 
 
