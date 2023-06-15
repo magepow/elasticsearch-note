@@ -4,6 +4,7 @@
 
 ### Docs
 * [Elasticsearch Install](https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html)
+* [Step to Auto restart elasticsearch services after crash or down](https://stackoverflow.com/questions/52624720/how-to-auto-restart-elasticsearch-search-once-crashed-on-linux-server)
 
 Commands:
 ```
