@@ -14,6 +14,21 @@ curl -X GET 'http://localhost:9200'
 
 ```
 
+Improve config:
+
+```
+# Change timeout when start
+sudo sed -i 's/TimeoutStartSec=.*$/TimeoutStartSec=3000/g' /usr/lib/systemd/system/elasticsearch.service
+
+# Config auto restart elasticsearch services after crash or down
+# Creat file /etc/systemd/system/elasticsearch.service.d/override.conf use command below
+sudo systemctl edit elasticsearch.service
+#  Now, add the following lines in the unit file.
+[Service]
+Restart=always
+
+```
+
 
 ### Awesome Tutorial:
 
