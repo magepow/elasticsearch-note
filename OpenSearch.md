@@ -17,8 +17,9 @@ sudo yum install opensearch
 # Special version
 sudo yum install 'opensearch-2.5.0'
 
-sudo systemctl start opensearch
-sudo systemctl status opensearch
+sudo systemctl enable opensearch.service
+sudo systemctl start opensearch.service
+
 
 sudo systemctl edit opensearch.service
 #  Now, add the following lines in the unit file.
@@ -31,7 +32,29 @@ sudo systemctl cat opensearch.service
 curl -X GET https://localhost:9200 -u 'admin:admin' --insecure
 curl -X GET https://localhost:9200/_cat/plugins?v -u 'admin:admin' --insecure
 
-sudo vi /etc/opensearch/opensearch.yml
+cp /etc/opensearch/opensearch.yml /etc/opensearch/opensearch.yml.bk
+sudo nano /etc/opensearch/opensearch.yml
+
+#####Add code below to file #####
+
+# Bind OpenSearch to the correct network interface. Use 0.0.0.0
+# to include all available interfaces or specify an IP address
+# assigned to a specific interface.
+network.host: 0.0.0.0
+
+# Unless you have already configured a cluster, you should set
+# discovery.type to single-node, or the bootstrap checks will
+# fail when you try to start the service.
+discovery.type: single-node
+
+# If you previously disabled the Security plugin in opensearch.yml,
+# be sure to re-enable it. Otherwise you can skip this setting.
+plugins.security.disabled: false
+
+
+sudo systemctl restart opensearch.service
+
+curl -X GET 'http://localhost:9200'
 
 ```
 
