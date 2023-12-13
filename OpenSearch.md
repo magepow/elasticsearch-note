@@ -3,7 +3,6 @@
 https://opensearch.org/docs/2.5/install-and-configure/install-opensearch/rpm/
 
 ```
-sudo yum install opensearch-2.5.0-linux-x64.rpm
 
 sudo curl -SL https://artifacts.opensearch.org/releases/bundle/opensearch/2.x/opensearch-2.x.repo -o /etc/yum.repos.d/opensearch-2.x.repo
 
