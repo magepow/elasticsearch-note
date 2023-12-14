@@ -31,6 +31,8 @@ sudo systemctl cat opensearch.service
 curl -X GET https://localhost:9200 -u 'admin:admin' --insecure
 curl -X GET https://localhost:9200/_cat/plugins?v -u 'admin:admin' --insecure
 
+sudo sed -i 's/TimeoutStartSec=.*$/TimeoutStartSec=3000/g' /usr/lib/systemd/system/opensearch.service
+
 cp /etc/opensearch/opensearch.yml /etc/opensearch/opensearch.yml.bk
 sudo nano /etc/opensearch/opensearch.yml
 
