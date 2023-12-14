@@ -48,7 +48,7 @@ discovery.type: single-node
 
 # If you previously disabled the Security plugin in opensearch.yml,
 # be sure to re-enable it. Otherwise you can skip this setting.
-plugins.security.disabled: false
+plugins.security.disabled: true
 
 
 sudo systemctl restart opensearch.service
