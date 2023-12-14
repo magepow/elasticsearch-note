@@ -30,6 +30,9 @@ sudo systemctl edit elasticsearch.service
 [Service]
 Restart=always
 
+# File config
+
+/etc/elasticsearch/elasticsearch.yml
 ```
 
 
