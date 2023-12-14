@@ -5,6 +5,7 @@ https://www.kevinleary.net/blog/uninstalling-elasticsearch/
 ```
 
 curl -XPOST https://localhost:9200/_cluster/nodes/_shutdown
+curl -XPOST http://localhost:9200/_cluster/nodes/_shutdown
 killall -KILL elas
 sudo service elasticsearch stop
 rpm -e elasticsearch
