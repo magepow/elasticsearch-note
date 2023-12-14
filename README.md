@@ -33,6 +33,7 @@ Restart=always
 # File config
 
 /etc/elasticsearch/elasticsearch.yml
+/etc/elasticsearch/jvm.options
 ```
 
 
