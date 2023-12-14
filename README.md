@@ -12,6 +12,9 @@ sudo systemctl restart elasticsearch.service
 
 curl -X GET 'http://localhost:9200'
 
+#Delete all the indexes
+curl -X DELETE 'http://localhost:9200/_all'
+
 ```
 
 Improve config:
