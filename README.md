@@ -38,6 +38,7 @@ Restart=always
 # Get value config
 
 curl -XGET localhost:9200/_cluster/settings
+curl -XGET localhost:9200/_cluster/settings?include_defaults
 
 curl -XGET localhost:9200/_cluster/settings?include_defaults&flat_settings&local&filter_path=defaults.indices*
 
