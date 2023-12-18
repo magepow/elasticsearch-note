@@ -62,6 +62,7 @@ curl -X GET 'http://localhost:9200'
 
 https://stackoverflow.com/questions/52624720/how-to-auto-restart-elasticsearch-search-once-crashed-on-linux-server
 
+```
 Step to Auto restart elasticsearch services after crash or down:
 1) Edit elasticsearch service unit file using the following command
 
@@ -82,3 +83,4 @@ sudo systemctl daemon-reload
 5) Can check the changes using command
 
 sudo systemctl cat elasticsearch.service
+```
