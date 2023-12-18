@@ -59,6 +59,12 @@ curl -X GET 'http://localhost:9200'
 
 ```
 
+### Config improve performance
+```
+#Increase RAM for JVM
+sudo sed -i 's/-Xms1g$/-Xms4g/g' /etc/opensearch/jvm.options
+sudo sed -i 's/-Xmx4g$/-Xmx4g/g' /etc/opensearch/jvm.options
+```
 
 https://stackoverflow.com/questions/52624720/how-to-auto-restart-elasticsearch-search-once-crashed-on-linux-server
 
