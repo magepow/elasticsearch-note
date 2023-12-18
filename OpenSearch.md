@@ -59,8 +59,17 @@ curl -X GET 'http://localhost:9200'
 
 ```
 
-### Config improve performance
+### Config Improve Performance
+
 ```
+
+curl -X PUT "http://localhost:9200/_cluster/settings" -H 'Content-Type: application/json' -d '{
+  "transient": {
+    "cluster.routing.use_adaptive_replica_selection": true
+  }
+}'
+
+
 #Increase RAM for JVM
 sudo sed -i 's/-Xms1g$/-Xms4g/g' /etc/opensearch/jvm.options
 sudo sed -i 's/-Xmx4g$/-Xmx4g/g' /etc/opensearch/jvm.options
