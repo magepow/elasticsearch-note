@@ -22,6 +22,9 @@ Improve config:
 ```
 # Change timeout when start
 sudo sed -i 's/TimeoutStartSec=.*$/TimeoutStartSec=3000/g' /usr/lib/systemd/system/elasticsearch.service
+#Increase RAM for JVM
+echo "-Xms4g" >> /etc/elasticsearch/jvm.options
+echo "-Xmx4g" >> /etc/elasticsearch/jvm.options
 
 # Config auto restart elasticsearch services after crash or down
 # Creat file /etc/systemd/system/elasticsearch.service.d/override.conf use command below
