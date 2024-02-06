@@ -34,6 +34,12 @@ sudo systemctl edit elasticsearch.service
 [Service]
 Restart=always
 
+# Optimize CPU
+curl -X PUT "http://localhost:9200/_cluster/settings" -H 'Content-Type: application/json' -d '{
+  "transient": {
+    "cluster.routing.use_adaptive_replica_selection": true
+  }
+}'
 # File config
 
 /etc/elasticsearch/elasticsearch.yml
