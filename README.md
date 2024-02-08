@@ -8,6 +8,8 @@
 
 Commands:
 ```
+systemctl enable elasticsearch.service
+systemctl is-enabled elasticsearch.service
 sudo systemctl restart elasticsearch.service
 
 curl -X GET 'http://localhost:9200'
